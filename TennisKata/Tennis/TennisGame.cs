@@ -21,13 +21,9 @@ namespace Tennis
 
 		public string GetScore()
 		{
-			if (_secendPlayerScore ==2)
+			if (_secendPlayerScore > 0)
 			{
-				return "Love_Thirty";
-			}
-			if (_secendPlayerScore ==1)
-			{
-				return "Love_Fifteen";
+				return "Love_" + _scoreLookUp[_secendPlayerScore];
 			}
 
 			if (_firstPlayerScore>0)
