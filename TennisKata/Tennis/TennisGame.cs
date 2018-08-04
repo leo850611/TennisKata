@@ -12,15 +12,15 @@ namespace Tennis
 
 		public string GetScore()
 		{
-			if (_firstPlayerScore == 2)
+			var _scoreLookUp = new Dictionary<int, string>()
 			{
-				return "Thirty_Love";
-			}
-			if (_firstPlayerScore == 1)
+				{1, "Fifteen"},
+				{2, "Thirty"},
+			};
+			if (_firstPlayerScore>0)
 			{
-				return "Fifteen_Love";
+				return _scoreLookUp[_firstPlayerScore] + "_Love";
 			}
-			
 			return "Love_All";
 		}
 
