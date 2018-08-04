@@ -12,6 +12,7 @@ namespace Tennis
 
 		private Dictionary<int, string> _scoreLookUp = new Dictionary<int, string>()
 		{
+			{0, "Love"},
 			{1, "Fifteen"},
 			{2, "Thirty"},
 			{3, "Forty"},
@@ -21,20 +22,11 @@ namespace Tennis
 
 		public string GetScore()
 		{
-			if (_firstPlayerScore == _secendPlayerScore && _firstPlayerScore>0)
+			if (_firstPlayerScore == _secendPlayerScore)
 			{
-				return "Fifteen_All";
+				return _scoreLookUp[_firstPlayerScore]+"_All";
 			}
-			if (_secendPlayerScore > 0)
-			{
-				return "Love_" + _scoreLookUp[_secendPlayerScore];
-			}
-
-			if (_firstPlayerScore > 0)
-			{
-				return _scoreLookUp[_firstPlayerScore] + "_Love";
-			}
-			return "Love_All";
+			return _scoreLookUp[_firstPlayerScore] +"_"+ _scoreLookUp[_secendPlayerScore];
 		}
 
 		public void FirstPlayerGotScore()
