@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tennis;
 
 namespace TennisKata
 {
@@ -9,6 +10,9 @@ namespace TennisKata
 		[TestMethod]
 		public void LoveAll()
 		{
+			var tennisGame = new TennisGame();
+			var score = tennisGame.GetScore();
+			Assert.AreEqual("Love_All", score);
 		}
 	}
 }
