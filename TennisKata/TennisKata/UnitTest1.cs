@@ -82,7 +82,6 @@ namespace TennisKata
 			Assert.AreEqual("Deuce", score);
 		}
 
-
 		[TestMethod]
 		public void FirstPlayer_Adv()
 		{
@@ -90,6 +89,15 @@ namespace TennisKata
 			SecendPlayerGotScoreTimes(3);
 			var score = _tennisGame.GetScore();
 			Assert.AreEqual("FirstPlayer_Adv", score);
+		}
+
+		[TestMethod]
+		public void SecendPlayer_Adv()
+		{
+			FirstPlayerGotScoreTimes(3);
+			SecendPlayerGotScoreTimes(4);
+			var score = _tennisGame.GetScore();
+			Assert.AreEqual("SecendPlayer_Adv", score);
 		}
 
 
