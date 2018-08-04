@@ -22,7 +22,7 @@ namespace Tennis
 
 		public string GetScore()
 		{
-			if (_firstPlayerScore >= 3 && _secendPlayerScore >= 3)
+			if (_firstPlayerScore == 3 && _secendPlayerScore == 3)
 			{
 				return "Deuce";
 			}
