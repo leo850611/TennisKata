@@ -126,7 +126,6 @@ namespace TennisKata
 			}
 		}
 
-
 		private void FirstPlayerGotScoreTimes(int times)
 		{
 			for (int i = 0; i < times; i++)

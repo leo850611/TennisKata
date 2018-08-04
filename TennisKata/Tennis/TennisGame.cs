@@ -29,11 +29,16 @@ namespace Tennis
 
 			if (IsGamePoint())
 			{
-				return Math.Abs(_firstPlayerScore - _secendPlayerScore) == 1
-					? GetAdvPlayer() + "_Adv"
-					: GetAdvPlayer() + "_Win";
+				return String.Concat(GetAdvPlayer(), IsAdv()
+					? "_Adv"
+					: "_Win");
 			}
 			return _scoreLookUp[_firstPlayerScore] + "_" + _scoreLookUp[_secendPlayerScore];
+		}
+
+		private bool IsAdv()
+		{
+			return Math.Abs(_firstPlayerScore - _secendPlayerScore) == 1;
 		}
 
 		private bool IsGamePoint()
