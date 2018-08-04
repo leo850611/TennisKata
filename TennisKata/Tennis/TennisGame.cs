@@ -12,5 +12,10 @@ namespace Tennis
 	    {
 		    return "Love_All";
 	    }
+
+	    public void FirstPlayerGotScore()
+	    {
+		    throw new NotImplementedException();
+	    }
     }
 }

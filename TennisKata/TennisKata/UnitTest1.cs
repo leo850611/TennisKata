@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tennis;
 
 namespace TennisKata
@@ -13,6 +12,15 @@ namespace TennisKata
 			var tennisGame = new TennisGame();
 			var score = tennisGame.GetScore();
 			Assert.AreEqual("Love_All", score);
+		}
+
+		[TestMethod]
+		public void FifteenLove()
+		{
+			var tennisGame = new TennisGame();
+			tennisGame.FirstPlayerGotScore();
+			var score = tennisGame.GetScore();
+			Assert.AreEqual("Fifteen_Love", score);
 		}
 	}
 }
