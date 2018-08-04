@@ -26,7 +26,7 @@ namespace Tennis
 				return "Love_" + _scoreLookUp[_secendPlayerScore];
 			}
 
-			if (_firstPlayerScore>0)
+			if (_firstPlayerScore > 0)
 			{
 				return _scoreLookUp[_firstPlayerScore] + "_Love";
 			}
