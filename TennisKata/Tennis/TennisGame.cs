@@ -24,20 +24,14 @@ namespace Tennis
 		{
 			if (IsPlayerSameScore())
 			{
-				if (_firstPlayerScore >= 3)
-				{
-					return "Deuce";
-				}
-				return _scoreLookUp[_firstPlayerScore] + "_All";
+				return _firstPlayerScore >= 3 ? "Deuce" : _scoreLookUp[_firstPlayerScore] + "_All";
 			}
 
 			if (IsGamePoint())
 			{
-				if (Math.Abs(_firstPlayerScore - _secendPlayerScore) == 1)
-				{
-					return GetAdvPlayer() + "_Adv";
-				}
-				return GetAdvPlayer() + "_Win";
+				return Math.Abs(_firstPlayerScore - _secendPlayerScore) == 1
+					? GetAdvPlayer() + "_Adv"
+					: GetAdvPlayer() + "_Win";
 			}
 			return _scoreLookUp[_firstPlayerScore] + "_" + _scoreLookUp[_secendPlayerScore];
 		}
