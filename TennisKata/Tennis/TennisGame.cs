@@ -22,19 +22,19 @@ namespace Tennis
 
 		public string GetScore()
 		{
-			if (_firstPlayerScore - _secendPlayerScore > 1 && _firstPlayerScore > 3)
-			{
-				return "FirstPlayer_Win";
-			}
-
 			if (_firstPlayerScore >= 3 && _secendPlayerScore >= 3)
 			{
 				if (Math.Abs(_firstPlayerScore - _secendPlayerScore) == 1)
 				{
 					return GetAdvPlayer() + "_Adv";
 				}
+				if (_firstPlayerScore - _secendPlayerScore > 1)
+				{
+					return "FirstPlayer_Win";
+				}
 				return "Deuce";
 			}
+
 			if (_firstPlayerScore == _secendPlayerScore)
 			{
 				return _scoreLookUp[_firstPlayerScore] + "_All";
