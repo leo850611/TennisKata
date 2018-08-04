@@ -26,11 +26,7 @@ namespace Tennis
 			{
 				if (Math.Abs(_firstPlayerScore - _secendPlayerScore) == 1)
 				{
-					if (_firstPlayerScore > _secendPlayerScore)
-					{
-						return "FirstPlayer_Adv";
-					}
-					return "SecendPlayer_Adv";
+					return GetAdvPlayer()+"_Adv";
 				}
 				return "Deuce";
 			}
@@ -39,6 +35,15 @@ namespace Tennis
 				return _scoreLookUp[_firstPlayerScore] + "_All";
 			}
 			return _scoreLookUp[_firstPlayerScore] + "_" + _scoreLookUp[_secendPlayerScore];
+		}
+
+		private string GetAdvPlayer()
+		{
+			if (_firstPlayerScore > _secendPlayerScore)
+			{
+				return "FirstPlayer";
+			}
+			return "SecendPlayer";
 		}
 
 		public void FirstPlayerGotScore()
