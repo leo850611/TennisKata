@@ -17,6 +17,8 @@ namespace Tennis
 			{3, "Forty"},
 		};
 
+		private int _secendPlayerScore;
+
 		public string GetScore()
 		{
 			if (_firstPlayerScore>0)
@@ -29,6 +31,11 @@ namespace Tennis
 		public void FirstPlayerGotScore()
 		{
 			_firstPlayerScore += 1;
+		}
+
+		public void SecendPlayerGotScore()
+		{
+			_secendPlayerScore += 1;
 		}
 	}
 }
