@@ -28,13 +28,18 @@ namespace Tennis
 				{
 					return "FirstPlayer_Adv";
 				}
+
+				if (_secendPlayerScore - _firstPlayerScore == 1)
+				{
+					return "SecendPlayer_Adv";
+				}
 				return "Deuce";
 			}
 			if (_firstPlayerScore == _secendPlayerScore)
 			{
-				return _scoreLookUp[_firstPlayerScore]+"_All";
+				return _scoreLookUp[_firstPlayerScore] + "_All";
 			}
-			return _scoreLookUp[_firstPlayerScore] +"_"+ _scoreLookUp[_secendPlayerScore];
+			return _scoreLookUp[_firstPlayerScore] + "_" + _scoreLookUp[_secendPlayerScore];
 		}
 
 		public void FirstPlayerGotScore()
