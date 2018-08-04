@@ -24,6 +24,10 @@ namespace Tennis
 		{
 			if (_firstPlayerScore >= 3 && _secendPlayerScore >= 3)
 			{
+				if (_firstPlayerScore - _secendPlayerScore == 1)
+				{
+					return "FirstPlayer_Adv";
+				}
 				return "Deuce";
 			}
 			if (_firstPlayerScore == _secendPlayerScore)
