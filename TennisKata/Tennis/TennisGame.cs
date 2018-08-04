@@ -31,7 +31,7 @@ namespace Tennis
 				return _scoreLookUp[_firstPlayerScore] + "_All";
 			}
 
-			if (_firstPlayerScore > 3 || _secendPlayerScore > 3)
+			if (IsGamePoint())
 			{
 				if (Math.Abs(_firstPlayerScore - _secendPlayerScore) == 1)
 				{
@@ -40,6 +40,11 @@ namespace Tennis
 				return GetAdvPlayer() + "_Win";
 			}
 			return _scoreLookUp[_firstPlayerScore] + "_" + _scoreLookUp[_secendPlayerScore];
+		}
+
+		private bool IsGamePoint()
+		{
+			return _firstPlayerScore > 3 || _secendPlayerScore > 3;
 		}
 
 		private bool IsPlayerSameScore()
