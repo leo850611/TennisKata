@@ -10,14 +10,15 @@ namespace Tennis
 	{
 		private int _firstPlayerScore;
 
+		private Dictionary<int, string> _scoreLookUp = new Dictionary<int, string>()
+		{
+			{1, "Fifteen"},
+			{2, "Thirty"},
+			{3, "Forty"},
+		};
+
 		public string GetScore()
 		{
-			var _scoreLookUp = new Dictionary<int, string>()
-			{
-				{1, "Fifteen"},
-				{2, "Thirty"},
-				{3, "Forty"},
-			};
 			if (_firstPlayerScore>0)
 			{
 				return _scoreLookUp[_firstPlayerScore] + "_Love";

@@ -26,21 +26,25 @@ namespace TennisKata
 		[TestMethod]
 		public void ThirtyLove()
 		{
-			_tennisGame.FirstPlayerGotScore();
-			_tennisGame.FirstPlayerGotScore();
+			FirstPlayerGotScoreTimes(2);
 			var score = _tennisGame.GetScore();
 			Assert.AreEqual("Thirty_Love", score);
 		}
+
 		[TestMethod]
 		public void FortyLove()
 		{
-			_tennisGame.FirstPlayerGotScore();
-			_tennisGame.FirstPlayerGotScore();
-			_tennisGame.FirstPlayerGotScore();
+			FirstPlayerGotScoreTimes(3);
 			var score = _tennisGame.GetScore();
 			Assert.AreEqual("Forty_Love", score);
 		}
 
-
+		private void FirstPlayerGotScoreTimes(int times)
+		{
+			for (int i = 0; i < times; i++)
+			{
+				_tennisGame.FirstPlayerGotScore();
+			}
+		}
 	}
 }
