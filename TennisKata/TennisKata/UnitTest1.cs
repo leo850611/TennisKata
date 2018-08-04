@@ -64,6 +64,15 @@ namespace TennisKata
 			Assert.AreEqual("Fifteen_All", score);
 		}
 
+		[TestMethod]
+		public void Deuce_3_3()
+		{
+			SecendPlayerGotScoreTimes(3);
+			FirstPlayerGotScoreTimes(3);
+			var score = _tennisGame.GetScore();
+			Assert.AreEqual("Deuce", score);
+		}
+
 		private void SecendPlayerGotScoreTimes(int times)
 		{
 			for (int i = 0; i < times; i++)
