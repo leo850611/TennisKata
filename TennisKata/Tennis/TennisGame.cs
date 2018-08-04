@@ -24,13 +24,12 @@ namespace Tennis
 		{
 			if (_firstPlayerScore >= 3 && _secendPlayerScore >= 3)
 			{
-				if (_firstPlayerScore - _secendPlayerScore == 1)
+				if (Math.Abs(_firstPlayerScore - _secendPlayerScore) == 1)
 				{
-					return "FirstPlayer_Adv";
-				}
-
-				if (_secendPlayerScore - _firstPlayerScore == 1)
-				{
+					if (_firstPlayerScore > _secendPlayerScore)
+					{
+						return "FirstPlayer_Adv";
+					}
 					return "SecendPlayer_Adv";
 				}
 				return "Deuce";
