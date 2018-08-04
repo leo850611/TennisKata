@@ -115,7 +115,7 @@ namespace TennisKata
 			FirstPlayerGotScoreTimes(1);
 			SecendPlayerGotScoreTimes(4);
 			var score = _tennisGame.GetScore();
-			Assert.AreEqual("FirstPlayer_Win", score);
+			Assert.AreEqual("SecendPlayer_Win", score);
 		}
 
 		private void SecendPlayerGotScoreTimes(int times)

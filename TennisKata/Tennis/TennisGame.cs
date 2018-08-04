@@ -31,16 +31,14 @@ namespace Tennis
 				return _scoreLookUp[_firstPlayerScore] + "_All";
 			}
 
-			if (_firstPlayerScore >= 3 && _secendPlayerScore >= 3)
+			if (_firstPlayerScore > 3 || _secendPlayerScore > 3)
 			{
 				if (Math.Abs(_firstPlayerScore - _secendPlayerScore) == 1)
 				{
 					return GetAdvPlayer() + "_Adv";
 				}
-				return "FirstPlayer_Win";
+				return GetAdvPlayer() + "_Win";
 			}
-
-			
 			return _scoreLookUp[_firstPlayerScore] + "_" + _scoreLookUp[_secendPlayerScore];
 		}
 
