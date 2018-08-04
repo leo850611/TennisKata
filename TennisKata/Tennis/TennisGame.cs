@@ -8,14 +8,20 @@ namespace Tennis
 {
     public class TennisGame
     {
+	    private int _firstPlayerScore;
+
 	    public string GetScore()
 	    {
+		    if (_firstPlayerScore == 1)
+		    {
+			    return "Fifteen_Love";
+		    }
 		    return "Love_All";
 	    }
 
 	    public void FirstPlayerGotScore()
 	    {
-		    throw new NotImplementedException();
+		    _firstPlayerScore += 1;
 	    }
     }
 }
