@@ -84,13 +84,15 @@ namespace TennisKata
 
 
 		[TestMethod]
-		public void Deuce_4_3()
+		public void FirstPlayer_Adv()
 		{
 			FirstPlayerGotScoreTimes(4);
 			SecendPlayerGotScoreTimes(3);
 			var score = _tennisGame.GetScore();
 			Assert.AreEqual("FirstPlayer_Adv", score);
 		}
+
+
 
 		private void SecendPlayerGotScoreTimes(int times)
 		{
