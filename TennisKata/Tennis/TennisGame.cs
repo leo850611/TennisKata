@@ -22,24 +22,31 @@ namespace Tennis
 
 		public string GetScore()
 		{
+			if (IsPlayerSameScore())
+			{
+				if (_firstPlayerScore >= 3)
+				{
+					return "Deuce";
+				}
+				return _scoreLookUp[_firstPlayerScore] + "_All";
+			}
+
 			if (_firstPlayerScore >= 3 && _secendPlayerScore >= 3)
 			{
 				if (Math.Abs(_firstPlayerScore - _secendPlayerScore) == 1)
 				{
 					return GetAdvPlayer() + "_Adv";
 				}
-				if (_firstPlayerScore - _secendPlayerScore > 1)
-				{
-					return "FirstPlayer_Win";
-				}
-				return "Deuce";
+				return "FirstPlayer_Win";
 			}
 
-			if (_firstPlayerScore == _secendPlayerScore)
-			{
-				return _scoreLookUp[_firstPlayerScore] + "_All";
-			}
+			
 			return _scoreLookUp[_firstPlayerScore] + "_" + _scoreLookUp[_secendPlayerScore];
+		}
+
+		private bool IsPlayerSameScore()
+		{
+			return _firstPlayerScore == _secendPlayerScore;
 		}
 
 		private string GetAdvPlayer()
