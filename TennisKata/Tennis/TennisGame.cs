@@ -22,6 +22,10 @@ namespace Tennis
 
 		public string GetScore()
 		{
+			if (_firstPlayerScore >= 3 && _secendPlayerScore >= 3)
+			{
+				return "Deuce";
+			}
 			if (_firstPlayerScore == _secendPlayerScore)
 			{
 				return _scoreLookUp[_firstPlayerScore]+"_All";
