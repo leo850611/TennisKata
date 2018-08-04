@@ -12,14 +12,15 @@ namespace Tennis
 
 		public string GetScore()
 		{
+			if (_firstPlayerScore == 2)
+			{
+				return "Thirty_Love";
+			}
 			if (_firstPlayerScore == 1)
 			{
 				return "Fifteen_Love";
 			}
-			else if (_firstPlayerScore == 2)
-			{
-				return "Thirty_Love";
-			}
+			
 			return "Love_All";
 		}
 
